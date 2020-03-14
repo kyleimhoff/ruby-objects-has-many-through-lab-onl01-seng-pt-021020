@@ -6,7 +6,7 @@ class Song
     self.genre = genre
     genre.add_song(self)
   end
-end
+
   
   def self.all 
     @@all 
