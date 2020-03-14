@@ -1,26 +1,22 @@
-class Genre 
-  attr_accessor :name 
-  
-  @@all = []
-  
+class Genre
+  attr_accessor :name
+
   def initialize(name)
     @name = name
-    @@all << self 
+    @songs = []
   end
 
-  def self.all 
-    @@all 
+  def songs
+    @songs
   end
-  
-  def songs 
-    songs.all.seclect {|song| song.genre == self}
+
+  def add_song(song)
+    @songs << song
   end
-  
-  def artists 
-    @songs.collect do |song|
+
+  def artists                    
+    self.songs.collect do |song|  
       song.artist
     end
   end
-  
-  
 end
